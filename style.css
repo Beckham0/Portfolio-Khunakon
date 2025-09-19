@@ -1,0 +1,291 @@
+body {
+    margin: 0px;
+    background-color: rgb(255, 255, 255);
+}
+
+.h1 {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+
+
+.text_group {
+    position: relative;
+    height: 60px;
+    overflow: hidden;
+    color: #000000;
+    background-color: #ffffff00;
+    border-bottom: 2px solid #ffffff00;
+    border-top: 2px solid #ffffff00;
+}
+
+.tg {
+    max-width: 1500px;
+    position: absolute;
+    margin: 5px 0;
+    padding: 10px 0;
+    width: max-content;
+    font-size: 30px;
+    color: #000000;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+
+    .text_group {
+        height: 70px;
+    }
+
+    .tg {
+        font-size: 25px;
+        font-weight: 600;
+        padding: 20px 0;
+    }
+
+}
+
+
+
+.text_group-1 {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    color: #000000;
+    background-color: #ffffff00;
+    border-bottom: 2px solid #ffffff00;
+    border-top: 2px solid #ffffff00;
+}
+
+.tg-1 {
+    max-width: 200px;
+    position: absolute;
+    margin: 5px 0;
+    padding: 10px 0;
+}
+
+@media (max-width: 768px) {
+
+    .text_group-1 {
+        height: 250px;
+    }
+
+    .tg-1 {
+        max-width: 200px;
+        height: auto;
+    }
+
+}
+
+
+
+
+
+.content-end {
+    padding: 10px;
+    max-width: 100%;
+    margin: 3% auto;
+    background-color: #ffffff;
+}
+
+.content-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.image-1 {
+    flex: 1 1 calc(50% - 10px);
+    max-width: 400px;
+    width: 100%;
+    padding: 30px 20px;
+    display: grid;
+    background-color: #91919100;
+    border-radius: 50px;
+}
+
+.top-1 img {
+    width: 65%;
+    height: 250px;
+    display: block;
+    justify-self: center;
+    padding: 4px;
+    border-radius: 40px;
+    background-color: #000000;
+    margin-top: 13%;
+}
+
+.bottom-1 {
+    display: flex;
+    gap: 10px;
+}
+
+.bottom-1 p {
+    width: 100%;
+    font-size: 17px;
+    text-align: start;
+    font-weight: 700;
+    padding: 0 5% 0 70px;
+    color: #000000;
+}
+
+
+.contact-2 {
+    flex: 1 1 calc(50% - 10px);
+    max-width: 90%;
+    margin: 0 20px;
+}
+
+.contact-2 p {
+    width: 100%;
+    font-size: 25px;
+    text-align: start;
+    font-weight: 700;
+
+}
+
+@media (max-width: 768px) {
+
+    .image-1 {
+        padding: 1px 20px;
+    }
+
+    .top-1 img {
+        width: 55%;
+        height: 200px;
+        padding: 4px;
+    }
+
+    .contact-2 {
+        margin: 0 auto;
+        padding: 0px;
+    }
+
+    .bottom-1 p {
+        font-size: 18px;
+        padding: 0 20px;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.content-h {
+    max-width: 100%;
+    display: flex;
+}
+
+.port-content-h {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0px;
+    background-color: #42493900;
+    padding: 0 20px 10px 0;
+    flex: 1 1 calc(20% - 10px);
+}
+
+.content8-buttons-a {
+    flex: 1 1 calc(40% - 10px);
+    min-width: 190px;
+    text-align: start;
+    margin-top: 1%;
+    padding: 0 2%;
+}
+
+.content8-buttons-a p {
+    font-size: 0.9rem;
+    color: #000000;
+    margin-bottom: 0px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+
+.content8-buttons-b {
+    flex: 1 1 calc(60% - 10px);
+    min-width: 120px;
+    width: 100%;
+    height: auto;
+    padding: 0px;
+}
+
+.content8-buttons-img-stop img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    margin: 10px;
+    padding: 2px;
+    background-color: #000000;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    /* เพิ่ม transition เพื่อให้การเปลี่ยนแปลงสมูท */
+}
+
+.content8-buttons-img img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    margin: 10px;
+    padding: 2px;
+    background-color: #000000;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    /* เพิ่ม transition เพื่อให้การเปลี่ยนแปลงสมูท */
+}
+
+.content8-buttons-img img:hover {
+    transform: scale(1.2);
+    /* ขยายรูปภาพ 110% เมื่อ hover */
+}
+
+
+@media (max-width: 768px) {
+
+    .content-h {
+        max-width: 95%;
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 5rem;
+    }
+
+    .port-content-h {
+        padding: 0 0 10px 0;
+    }
+
+    .content8-buttons-a {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 9rem;
+        margin: 0 auto;
+        margin-top: 0px;
+    }
+
+    .content8-buttons-a h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .content8-buttons-a p {
+        font-size: 1rem;
+        padding: 10px 0px;
+    }
+
+    .content8-buttons-img img {
+        width: 100%;
+        justify-content: center;
+        height: 230px;
+        object-fit: cover;
+    }
+}

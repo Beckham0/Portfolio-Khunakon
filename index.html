@@ -1,0 +1,212 @@
+<html lang="th">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BECKHAM</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <div class="Scrolling_Text">
+    <div class="text_group">
+      <p class="tg">ยินดีต้อนรับเข้าสู่เว็บไซต์ จัดเก็บผลงาน คุณากร ทำดี</p>
+    </div>
+  </div>
+
+
+  <div class="content-end">
+    <div class="content-1">
+      <div class="image-1">
+        <div class="top-1">
+          <img src="KHUNAKON.jpg">
+        </div>
+        <div class="bottom-1" style="gap: 0px;">
+          <p style="font-size: 25px;margin-block-start: 0em;margin-block-end: 0em;">
+            นาย คุณากร ทำดี</p>
+        </div>
+        <div class="bottom-1">
+          <p style="margin-block-start: 0em;margin-block-end: 0em;">เกิดวันที่ 6 กันยายน พ.ศ.2544 อายุ 24 ปี <br> จบจาก มหาวิทยาลัยนครพนม <br> คณะ
+            วิศวกรรมศาสตร์ <br> สาขา วิศวกรรมคอมพิวเตอร์</p>
+        </div>
+      </div>
+      <div class="contact-2">
+        <p>ผลงาน เว็บไซต์ รูปแบบ Static Website</p>
+        <div class="content-h">
+          <div class="port-content-h">
+            <div class="content8-buttons-b">
+              <a class="content8-buttons-img" href="https://beckham0.github.io/" target="_blank"
+                rel="noopener noreferrer">
+                <img src="บริษัท เอ็นอาร์พี มายแอคเคาท์ จำกัด.png" alt="example image">
+              </a>
+            </div>
+            <div class="content8-buttons-a">
+              <p>บริษัท เอ็นอาร์พี มายแอคเคาท์ จำกัด</p>
+            </div>
+          </div>
+          <div class="port-content-h">
+            <div class="content8-buttons-b">
+              <a class="content8-buttons-img"
+                href="https://bp-acc.netlify.app/?fbclid=IwY2xjawM55HlleHRuA2FlbQIxMQBicmlkETF5NHhpMkNiRzAyU2MybHJnAR5vGir0Fsg8-TBDZVw7PWY1_lg8QJKDxXo6avgxCw2w0k9h83G5RH2p-IP9Vw_aem_b8AZyVMzx5Unth-cW-5Mkw"
+                target="_blank" rel="noopener noreferrer">
+                <img src="บริษัท บี พี แอคเคาท์ เซอร์วิส.png" alt="example image">
+              </a>
+            </div>
+            <div class="content8-buttons-a">
+              <p>บริษัท บี พี แอคเคาท์ เซอร์วิส กรุ๊ป จำกัด</p>
+            </div>
+          </div>
+          <div class="port-content-h">
+            <div class="content8-buttons-b">
+              <a class="content8-buttons-img" href="https://one-stop-acc.netlify.app/" target="_blank"
+                rel="noopener noreferrer">
+                <img src="บริษัท วัน สต๊อป แอคเคาท์ติ้ง จำกัด.png" alt="example image">
+              </a>
+            </div>
+            <div class="content8-buttons-a">
+              <p>บริษัท วัน สต๊อป แอคเคาท์ติ้ง จำกัด</p>
+            </div>
+          </div>
+        </div>
+        <div class="content-h">
+          <div class="port-content-h">
+            <div class="content8-buttons-b">
+              <a class="content8-buttons-img" href="https://meritbangnainsurance.com/" target="_blank"
+                rel="noopener noreferrer">
+                <img src="สำนักงานตัวแทนประกันชีวิต.png" alt="example image">
+              </a>
+            </div>
+            <div class="content8-buttons-a">
+              <p>สำนักงานตัวแทนประกันชีวิต คุณรัสรินทร์</p>
+            </div>
+          </div>
+          <div class="port-content-h">
+            <div class="content8-buttons-b">
+              <a class="content8-buttons-img" href="https://payupyotha.netlify.app/" target="_blank"
+                rel="noopener noreferrer">
+                <img src="บริษัท พายัพโยธา จำกัด.png" alt="example image">
+              </a>
+            </div>
+            <div class="content8-buttons-a">
+              <p>บริษัท พายัพโยธา จำกัด</p>
+            </div>
+          </div>
+          <div class="port-content-h">
+            <div class="content8-buttons-b">
+              <a class="content8-buttons-img-stop" href="#">
+                <img src="w.jpg" alt="example image" style="background-color: rgba(240, 248, 255, 0);">
+              </a>
+            </div>
+            <div class="content8-buttons-a">
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.carousel-container').forEach(container => {
+      const track = container.querySelector('.carousel-track');
+      const prevButton = container.querySelector('.prev2');
+      const nextButton = container.querySelector('.next2');
+      const cardWidth = container.querySelector('.card-ct').offsetWidth + 40;
+      let currentPosition = 0;
+
+      // ฟังก์ชันตรวจสอบจำนวนการ์ดที่แสดงตามขนาดหน้าจอ
+      const getVisibleCards = () => {
+        if (window.innerWidth >= 1200) return 3;
+        if (window.innerWidth >= 480) return 2;
+        return 1;
+      };
+
+      let visibleCards = getVisibleCards();
+
+      // อัปเดตจำนวนการ์ดเมื่อเปลี่ยนขนาดหน้าจอ
+      window.addEventListener('resize', () => {
+        visibleCards = getVisibleCards();
+        currentPosition = 0;
+        track.style.transform = `translateX(${currentPosition}px)`;
+      });
+
+      nextButton.addEventListener('click', () => {
+        if (currentPosition > -(track.scrollWidth - cardWidth * visibleCards)) {
+          currentPosition -= cardWidth;
+          track.style.transform = `translateX(${currentPosition}px)`;
+        }
+      });
+
+      prevButton.addEventListener('click', () => {
+        if (currentPosition < 0) {
+          currentPosition += cardWidth;
+          track.style.transform = `translateX(${currentPosition}px)`;
+        }
+      });
+
+      // สร้างตัวแปรเพื่อควบคุมทิศทาง
+      let scrollDirection = 'right';
+
+      // เริ่มเลื่อนอัตโนมัติแบบไป-กลับ
+      let autoScrollInterval = setInterval(() => {
+        const maxScroll = track.scrollWidth - cardWidth * visibleCards;
+
+        if (scrollDirection === 'right') {
+          if (currentPosition > -maxScroll) {
+            currentPosition -= cardWidth;
+          } else {
+            scrollDirection = 'left';
+            currentPosition += cardWidth;
+          }
+        } else {
+          if (currentPosition < 0) {
+            currentPosition += cardWidth;
+          } else {
+            scrollDirection = 'right';
+            currentPosition -= cardWidth;
+          }
+        }
+
+        track.style.transform = `translateX(${currentPosition}px)`;
+      }, 4000);
+    });
+
+  </script>
+
+
+
+
+
+
+
+
+
+  <script>
+    const styli = document.createElement('style');
+    const position = 'right';
+    const tgElement = document.querySelector('.tg');
+    //const tqElement = document.querySelector('.tg-1');
+
+    styli.innerHTML = `
+    @keyframes my-animation {
+      0% { ${position}: -${tgElement.offsetWidth + 10}px; }
+      100% { ${position}: 100%; }
+    }
+    .tg {
+      animation: my-animation 18s linear infinite;
+    }
+
+    .tg-1 {
+      animation: my-animation 10s linear infinite;
+    }
+  `;
+
+    document.head.append(styli);
+  </script>
+
+</body>
+
+</html>
