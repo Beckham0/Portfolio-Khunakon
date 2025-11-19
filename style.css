@@ -221,6 +221,7 @@ body {
 }
 
 .content8-buttons-img-stop img {
+    position: absolute;
     width: 100%;
     height: 170px;
     object-fit: cover;
