@@ -1,6 +1,11 @@
 body {
     margin: 0px;
     background-color: rgb(255, 255, 255);
+    background: 
+        linear-gradient(rgba(212, 212, 212, 0.89), rgba(212, 212, 212, 0.849)),
+        url("Game1.png");
+    background-size: cover;
+    background-position: center;
 }
 
 .h1 {
@@ -85,7 +90,7 @@ body {
     padding: 10px;
     max-width: 100%;
     margin: 0% auto;
-    background-color: #ffffff;
+    background-color: #ffffff00;
 }
 
 .content-1 {
@@ -204,7 +209,7 @@ body {
 }
 
 .content8-buttons-a p {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: #000000;
     margin-bottom: 0px;
     font-weight: 700;
@@ -222,7 +227,7 @@ body {
 
 .content8-buttons-img-stop img {
     position: absolute;
-    width: 10%;
+    width: 0%;
     height: 170px;
     object-fit: cover;
     margin: 10px;
@@ -235,7 +240,7 @@ body {
 
 .content8-buttons-img img {
     width: 100%;
-    height: 170px;
+    height: 200px;
     object-fit: cover;
     margin: 10px;
     padding: 2px;
@@ -298,7 +303,7 @@ body {
 
 .content-9 {
     max-width: 100%;
-    display: flex;
+    /* display: flex; */
 }
 
 .port-content-9 {
@@ -338,7 +343,7 @@ body {
 
 .content9-buttons-img-stop img {
     position: absolute;
-    width: 10%;
+    width: 0%;
     height: 170px;
     object-fit: cover;
     margin: 10px;
@@ -350,8 +355,8 @@ body {
 }
 
 .content9-buttons-img img {
-    width: 100%;
-    height: 230px;
+    width: 90%;
+    height: 270px;
     object-fit: cover;
     margin: 10px;
     padding: 0px;

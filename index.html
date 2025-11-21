@@ -178,22 +178,22 @@
   </script>
 
 
-
+<br><br><br>
 
   <div class="content-end">
     <div class="content-1">
       <div class="image-1" style="padding: 0 0;">
         <div class="top-1">
-          <img src="w.jpg" style="background-color: rgba(240, 248, 255, 0); margin-top: 0%;">
+          <img src="w.jpg" style="width: 0%; background-color: rgba(240, 248, 255, 0); margin-top: 0%;">
         </div>
       </div>
       <div class="contact-2">
-        <p></p>
+        <p style="padding: 40px 0; margin: 0;">โปรเจกต์พัฒนา เกม 3D แนว Base Defense</p>
         <div class="content-9">
           <div class="port-content-9">
             <div class="content9-buttons-b">
-              <a class="content9-buttons-img" href="" target="_blank" rel="noopener noreferrer">
-                <img src="Game1.png" alt="example image">
+              <a class="content9-buttons-img">
+                <img src="Game2.png" alt="example image">
               </a>
             </div>
             <div class="content8-buttons-a">
@@ -202,24 +202,14 @@
           </div>
           <div class="port-content-9">
             <div class="content9-buttons-b">
-              <a class="content9-buttons-img" target="_blank" rel="noopener noreferrer">
-                <video width="500" height="250" controls class="scroll-video" muted playsinline preload="metadata" >
+              <a class="content9-buttons-img" target="_blank" rel="noopener noreferrer" style="border-radius: 20px;">
+                <video width="45%" height="350" controls class="scroll-video" muted playsinline preload="metadata" style="border-radius: 20px;">
                   <source src="game.mp4" type="video/mp4">
                   เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
                 </video>
               </a>
             </div>
             <div class="content8-buttons-a">
-              <p></p>
-            </div>
-          </div>
-          <div class="port-content-9">
-            <div class="content9-buttons-b">
-              <a class="content9-buttons-img-stop" href="#">
-                <img src="w.jpg" alt="example image" style="background-color: rgba(240, 248, 255, 0);">
-              </a>
-            </div>
-            <div class="content9-buttons-a">
               <p></p>
             </div>
           </div>
@@ -230,23 +220,29 @@
 
 
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const videos = document.querySelectorAll(".scroll-video");
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const videos = document.querySelectorAll(".scroll-video");
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.play(); // เล่นเมื่อเห็น
-                    } else {
-                        entry.target.pause(); // หยุดเมื่อเลื่อนออก
-                    }
-                });
-            }, { threshold: 0.5 }); // 0.5 = ต้องเห็นครึ่งหนึ่งของวิดีโอถึงจะเล่น
+      videos.forEach(video => {
+        video.muted = true;       // ป้องกัน autoplay block
+        video.playsInline = true; // รองรับมือถือ
+        video.loop = true;        // ทำให้เล่นวน
+      });
 
-            videos.forEach(video => observer.observe(video));
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.play().catch(e => console.log("Cannot autoplay:", e));
+          } else {
+            entry.target.pause();
+          }
         });
-    </script>
+      }, { threshold: 0.5 });
+
+      videos.forEach(video => observer.observe(video));
+    });
+  </script>
 
 
   <script>
