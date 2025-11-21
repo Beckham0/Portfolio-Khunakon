@@ -84,7 +84,7 @@ body {
 .content-end {
     padding: 10px;
     max-width: 100%;
-    margin: 3% auto;
+    margin: 0% auto;
     background-color: #ffffff;
 }
 
@@ -133,7 +133,7 @@ body {
 
 .contact-2 {
     flex: 1 1 calc(50% - 10px);
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 20px;
 }
 
@@ -222,7 +222,7 @@ body {
 
 .content8-buttons-img-stop img {
     position: absolute;
-    width: 100%;
+    width: 10%;
     height: 170px;
     object-fit: cover;
     margin: 10px;
@@ -246,7 +246,7 @@ body {
 }
 
 .content8-buttons-img img:hover {
-    transform: scale(1.2);
+    transform: scale(1.04);
     /* ขยายรูปภาพ 110% เมื่อ hover */
 }
 
@@ -284,6 +284,122 @@ body {
     }
 
     .content8-buttons-img img {
+        width: 100%;
+        justify-content: center;
+        height: 230px;
+        object-fit: cover;
+    }
+}
+
+
+
+
+
+
+.content-9 {
+    max-width: 100%;
+    display: flex;
+}
+
+.port-content-9 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0px;
+    background-color: #42493900;
+    padding: 0 20px 10px 0;
+    flex: 1 1 calc(20% - 10px);
+}
+
+.content9-buttons-a {
+    flex: 1 1 calc(40% - 10px);
+    min-width: 190px;
+    text-align: start;
+    margin-top: 1%;
+    padding: 0 2%;
+}
+
+.content9-buttons-a p {
+    font-size: 0.9rem;
+    color: #000000;
+    margin-bottom: 0px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+
+.content9-buttons-b {
+    flex: 1 1 calc(60% - 10px);
+    min-width: 120px;
+    width: 100%;
+    height: auto;
+    padding: 0px;
+}
+
+.content9-buttons-img-stop img {
+    position: absolute;
+    width: 10%;
+    height: 170px;
+    object-fit: cover;
+    margin: 10px;
+    padding: 2px;
+    background-color: #000000;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    /* เพิ่ม transition เพื่อให้การเปลี่ยนแปลงสมูท */
+}
+
+.content9-buttons-img img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    margin: 10px;
+    padding: 0px;
+    background-color: #00000000;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    /* เพิ่ม transition เพื่อให้การเปลี่ยนแปลงสมูท */
+}
+
+.content9-buttons-img img:hover {
+    transform: scale(1);
+    /* ขยายรูปภาพ 110% เมื่อ hover */
+}
+
+
+@media (max-width: 768px) {
+
+    .content-9 {
+        max-width: 95%;
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 5rem;
+    }
+
+    .port-content-9 {
+        padding: 0 0 10px 0;
+    }
+
+    .content9-buttons-a {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 9rem;
+        margin: 0 auto;
+        margin-top: 0px;
+    }
+
+    .content9-buttons-a h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .content9-buttons-a p {
+        font-size: 1rem;
+        padding: 10px 0px;
+    }
+
+    .content9-buttons-img img {
         width: 100%;
         justify-content: center;
         height: 230px;
