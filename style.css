@@ -6,11 +6,9 @@ body {
         url("Game1.png");
     background-size: cover;
     background-position: center;
-}
-
-.h1 {
-    font-size: 30px;
-    font-weight: 600;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    /* กันเว็บล้นขอบ */
 }
 
 
@@ -121,15 +119,14 @@ body {
 }
 
 .bottom-1 {
-    padding: 10px 0 ;
+    padding: 10px 0;
 }
 
 .bottom-1 h1 {
     width: 100%;
     font-size: 17px;
-    text-align: start;
+    text-align: center;
     font-weight: 700;
-    padding: 0 5% 0 70px;
     color: #000000;
 }
 
@@ -425,9 +422,7 @@ body {
 
     .content9-buttons-img img {
         width: 0%;
-        justify-content: center;
         height: 0px;
-        object-fit: cover;
     }
 }
 
@@ -438,73 +433,73 @@ body {
 
 
 
+.gallery {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.video-box,
+.img-box {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #777;
+}
+
+video,
+img {
+    width: 100%;
+    display: block;
+}
+
+.carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.slide {
+    min-width: 100%;
+}
+
+.slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+
     .gallery {
-      display: grid;
-      grid-template-columns: 1.8fr 1fr;
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .video-box,
-    .img-box {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 2px solid #777;
-    }
-
-    video,
-    img {
-      width: 100%;
-      display: block;
-    }
-
-    .carousel {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-    }
-
-    .slider {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .slider-track {
-      display: flex;
-      transition: transform 0.3s ease;
-    }
-
-    .slide {
-      min-width: 100%;
-    }
-
-    .slider button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-    }
-
-    .prev {
-      left: 10px;
-    }
-
-    .next {
-      right: 10px;
-    }
-
-    @media (max-width: 768px) {
-
-      .gallery {
         display: grid;
         grid-template-columns: 1fr;
         gap: 10px;
         padding: 10px;
-      }
-
     }
+
+}
