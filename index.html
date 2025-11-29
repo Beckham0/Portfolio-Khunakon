@@ -1,276 +1,436 @@
+<!doctype html>
 <html lang="th">
 
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio — KHUNAKON</title>
+    <style>
+        :root {
+            --bg: #0f1724;
+            --card: #0b1320;
+            --muted: #94a3b8;
+            --accent: #ffffff;
+            --glass: rgba(255, 255, 255, 0.03);
+            --radius: 14px;
+            --max-w: 1100px;
+            --ff: 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        }
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BECKHAM</title>
-  <link rel="stylesheet" href="style.css">
+        * {
+            box-sizing: border-box
+        }
 
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--ff);
+            background: linear-gradient(180deg, #071024 0%, var(--bg) 100%);
+            color: #e6eef6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.45
+        }
+
+        .wrap {
+            max-width: var(--max-w);
+            margin: 40px auto;
+            padding: 28px
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px
+        }
+
+        .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .logo {
+            width: 96px;
+            height: 96px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent), #60a5fa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #062023
+        }
+
+        .logo img {
+            width: 96px;
+            height: 96px;
+            border-radius: 5px;
+        }
+
+        .title {
+            font-size: 25px;
+            font-weight: 700
+        }
+
+        nav {
+            display: flex;
+            gap: 16px
+        }
+
+        a.btn {
+            color: var(--accent);
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 10px;
+            border: 1px solid rgb(255, 255, 255);
+            font-weight: 600
+        }
+
+        /* Hero */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 28px;
+            margin-top: 28px;
+            align-items: center
+        }
+
+        .hero-card {
+            background: linear-gradient(180deg, rgb(185 185 185 / 16%), #0f1724);
+            padding: 24px;
+            border-radius: var(--radius);
+            box-shadow: 0 6px 28px rgba(2, 6, 23, 0.6)
+        }
+
+        h1 {
+            margin: 0 0 8px 0;
+            font-size: 28px
+        }
+
+        p.lead {
+            margin: 0;
+            color: var(--muted)
+        }
+
+        .skills {
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px
+        }
+
+        .chip {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 8px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            font-size: 13px
+        }
+
+        /* Projects */
+        .projects {
+            margin-top: 26px
+        }
+
+        .controls {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 12px
+        }
+
+        .filter {
+            padding: 8px 12px;
+            background: transparent;
+            border: 1px solid rgb(255, 255, 255);
+            border-radius: 10px;
+            color: #ffffff;
+            cursor: pointer
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgb(185 185 185 / 16%), #0f1724);
+            padding: 14px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgb(209, 209, 209);
+            cursor: pointer;
+            transition: transform .18s ease, box-shadow .18s
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(2, 6, 23, 0.6)
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px
+        }
+
+        .card h3 {
+            margin: 10px 0 6px;
+            font-size: 16px
+        }
+
+        .meta {
+            font-size: 13px;
+            color: #959595;
+        }
+
+        /* modal */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px
+        }
+
+        .modal {
+            background: #071927;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 10px 40px rgba(2, 6, 23, 0.7)
+        }
+
+        .modal .media {
+            height: 320px;
+            border-radius: 8px;
+            overflow: hidden
+        }
+
+        .modal .content {
+            margin-top: 14px
+        }
+
+        .close {
+            background: transparent;
+            border: 1px solid rgb(255, 255, 255);
+            padding: 6px 10px;
+            border-radius: 8px;
+            color: floralwhite;
+            cursor: pointer
+        }
+
+        /* footer/contact */
+        footer {
+            margin-top: 40px;
+            padding: 18px;
+            border-radius: 12px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        /* responsive */
+        @media (max-width:980px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media (max-width:600px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start
+            }
+
+            .brand {
+                margin-bottom: 8px
+            }
+        }
+    </style>
 </head>
 
 <body>
-
-  <div class="Scrolling_Text">
-    <div class="text_group">
-      <p class="tg">ยินดีต้อนรับเข้าสู่เว็บไซต์ จัดเก็บผลงาน คุณากร ทำดี</p>
-    </div>
-  </div>
-
-
-  <div class="content-end">
-    <div class="content-1">
-      <div class="image-1">
-        <div class="top-1">
-          <img src="KHUNAKON.jpg">
-        </div>
-        <div class="bottom-1" style="gap: 0px;">
-          <h1 style="font-size: 21px;margin-block-start: 0em;margin-block-end: 0em;">
-            นาย คุณากร ทำดี</h1>
-        </div>
-        <div class="bottom-1">
-          <p style="margin-block-start: 0em;margin-block-end: 0em;">เกิดวันที่ 6 กันยายน พ.ศ.2544 อายุ 24 ปี <br> จบจาก
-            มหาวิทยาลัยนครพนม <br> คณะ
-            วิศวกรรมศาสตร์ <br> สาขา วิศวกรรมคอมพิวเตอร์</p>
-        </div>
-      </div>
-      <div class="contact-2">
-        <h1>ผลงาน เว็บไซต์ รูปแบบ Static Website</h1>
-        <p style="padding: 3px 0 30px; margin: 0; font-size: large; font-weight: 100;">ประสบการณ์ในการพัฒนาเว็บไซต์แบบ
-          Static Website จากการรับงานฟรีแลนซ์ โดยถนัดด้าน Frontend เป็นหลัก โดยใช้ HTML, CSS และ JavaScript</p>
-        <div class="content-h">
-          <div class="port-content-h">
-            <div class="content8-buttons-b">
-              <a class="content8-buttons-img" href="https://beckham0.github.io/" target="_blank"
-                rel="noopener noreferrer">
-                <img src="บริษัท เอ็นอาร์พี มายแอคเคาท์ จำกัด.png" alt="example image">
-              </a>
-            </div>
-            <div class="content8-buttons-a">
-              <p>บริษัท เอ็นอาร์พี มายแอคเคาท์ จำกัด</p>
-            </div>
-          </div>
-          <div class="port-content-h">
-            <div class="content8-buttons-b">
-              <a class="content8-buttons-img"
-                href="https://bp-acc.netlify.app/?fbclid=IwY2xjawM55HlleHRuA2FlbQIxMQBicmlkETF5NHhpMkNiRzAyU2MybHJnAR5vGir0Fsg8-TBDZVw7PWY1_lg8QJKDxXo6avgxCw2w0k9h83G5RH2p-IP9Vw_aem_b8AZyVMzx5Unth-cW-5Mkw"
-                target="_blank" rel="noopener noreferrer">
-                <img src="บริษัท บี พี แอคเคาท์ เซอร์วิส.png" alt="example image">
-              </a>
-            </div>
-            <div class="content8-buttons-a">
-              <p>บริษัท บี พี แอคเคาท์ เซอร์วิส กรุ๊ป จำกัด</p>
-            </div>
-          </div>
-          <div class="port-content-h">
-            <div class="content8-buttons-b">
-              <a class="content8-buttons-img" href="https://one-stop-acc.netlify.app/" target="_blank"
-                rel="noopener noreferrer">
-                <img src="บริษัท วัน สต๊อป แอคเคาท์ติ้ง จำกัด.png" alt="example image">
-              </a>
-            </div>
-            <div class="content8-buttons-a">
-              <p>บริษัท วัน สต๊อป แอคเคาท์ติ้ง จำกัด</p>
-            </div>
-          </div>
-        </div>
-        <div class="content-h">
-          <div class="port-content-h">
-            <div class="content8-buttons-b">
-              <a class="content8-buttons-img" href="https://meritbangnainsurance.com/" target="_blank"
-                rel="noopener noreferrer">
-                <img src="สำนักงานตัวแทนประกันชีวิต.png" alt="example image">
-              </a>
-            </div>
-            <div class="content8-buttons-a">
-              <p>สำนักงานตัวแทนประกันชีวิต คุณรัสรินทร์</p>
-            </div>
-          </div>
-          <div class="port-content-h">
-            <div class="content8-buttons-b">
-              <a class="content8-buttons-img" href="https://payupyotha.netlify.app/" target="_blank"
-                rel="noopener noreferrer">
-                <img src="บริษัท พายัพโยธา จำกัด.png" alt="example image">
-              </a>
-            </div>
-            <div class="content8-buttons-a">
-              <p>บริษัท พายัพโยธา จำกัด</p>
-            </div>
-          </div>
-          <div class="port-content-h">
-            <div class="content8-buttons-b">
-              <a class="content8-buttons-img-stop" href="#">
-                <img src="w.jpg" alt="example image" style="background-color: rgba(240, 248, 255, 0);">
-              </a>
-            </div>
-            <div class="content8-buttons-a">
-              <p></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-  <br>
-
-
-
-  <div class="content-end">
-    <div class="content-1">
-      <div class="image-1">
-        <div class="top-1-a">
-          <img src="w.jpg" style="width: 0%; background-color: rgba(240, 248, 255, 0); margin-top: 0%;">
-        </div>
-      </div>
-      <div class="contact-2">
-        <h1 style="padding: 20px 0; margin: 0;">โปรเจกต์พัฒนา เกม 3D แนว Base Defense</h1>
-        <p style="padding: 3px 0 10px; margin: 0; font-size: large; font-weight: 100;">
-          โปรเจกต์จบการศึกษาของผมคือการพัฒนา เกม 3D แนว Base Defense ด้วย Unity Game Engine
-          ซึ่งผู้เล่นรับบทเป็นผู้พิทักษ์ที่ต้องปกป้อง “Energy Pillar” จากการรุกรานของศัตรู เกมนี้มีระบบ การต่อสู้,
-          การป้องกัน, การจำกัดเวลา และการโต้ตอบกับสิ่งแวดล้อม ซึ่งช่วยเพิ่มทักษะการออกแบบระบบ, การใช้ C# ใน Unity
-          และการแก้ไขปัญหาทางเทคนิคให้สมบูรณ์</p>
-        <div class="content-9">
-          <div class="port-content-9">
-            <div class="content9-buttons-b">
-              <a class="content9-buttons-img">
-                <img src="Game2.png" alt="example image">
-              </a>
-            </div>
-          </div>
-          <div class="port-content-9">
-            <div class="content9-buttons-b">
-              <div class="gallery">
-
-                <div class="video-box">
-                  <video src="game.mp4" controls class="scroll-video" muted playsinline preload="metadata"></video>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <div class="logo"><img src="KHUNAKON.jpg" alt=""></div>
+                <div>
+                    <div class="title">KHUNAKON THAMDI</div>
+                    <div class="meta" style="font-size:13px;color:var(--muted)">Frontend Developer / IT / IT-suppot /
+                        Web apps</div>
                 </div>
-
-                <div class="slider">
-                  <button class="prev">❮</button>
-                  <div class="slider-track">
-                    <div class="slide"><img src="GAME s1.jpg"></div>
-                    <div class="slide"><img src="GAME s2.jpg"></div>
-                    <div class="slide"><img src="GAME s3.jpg"></div>
-                    <div class="slide"><img src="GAME s4.jpg"></div>
-                  </div>
-                  <button class="next">❯</button>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
+            <nav>
+                <a class="btn" href="#projects">ผลงาน</a>
+                <a class="btn" href="#about">เกี่ยวกับ</a>
+                <a class="btn" href="#contact">ติดต่อ</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-card">
+                <h1>สวัสดี — ผม นาย คุณากร ทำดี</h1>
+                <p class="lead">ผมเป็นนักพัฒนาที่ทำเว็บแอปและเกม มุ่งเน้นการสร้างประสบการณ์ที่ใช้งานง่ายและสวยงาม
+                    นี่เป็นตัวอย่างผลงานที่ผมอยากแชร์</p>
+                <div class="skills">
+                    <div class="chip">HTML</div>
+                    <div class="chip">CSS</div>
+                    <div class="chip">JavaScript</div>
+                    <div class="chip">Unity</div>
+                    <div class="chip">React</div>
+                </div>
+            </div>
+
+            <aside class="hero-card">
+                <h3>ข้อมูล</h3>
+                <p class="meta">ที่อยู่:27/1 ม.2 ต.เวินพระบาท อ.ท่าอุเทน จ.นครพนม 48120<br />Email: khunakonthamdi@gmail.com <br>GitHub: https://github.com/Beckham0</p>
+                <div style="margin-top:12px">
+                    <button class="close" id="downloadBtn">ดาวน์โหลด Resume</button>
+                </div>
+            </aside>
+        </section>
+
+        <section id="projects" class="projects">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+                <h2 style="margin:0">ผลงาน</h2>
+                <div class="controls">
+                    <button class="filter" data-filter="all">ทั้งหมด</button>
+                    <button class="filter" data-filter="web">Web</button>
+                    <button class="filter" data-filter="game">Game</button>
+                    <!-- <button class="filter" data-filter="ux">UI/UX</button> -->
+                </div>
+            </div>
+
+            <div class="grid" id="grid"></div>
+        </section>
+
+        <section id="about" style="margin-top:28px">
+            <div class="hero-card">
+                <h2>เกี่ยวกับ</h2>
+                <p class="lead">สวัสดีครับ ผม นาย คุณากร ทําดี สำเร็จการศึกษาระดับปริญญาตรี สาขาวิศวกรรมคอมพิวเตอร์
+                    จากมหาวิทยาลัยนครพนม ผมเป็นนักศึกษาจบใหม่ที่มีประสบการณ์ในการพัฒนาเว็บไซต์แบบ Static Website
+                    จากการรับงานฟรีแลนซ์ โดยถนัดด้าน Frontend เป็นหลัก โดยใช้ HTML, CSS และ JavaScript ส่วนด้าน Backend
+                    ใช้ PHP และ Node.js
+
+                    นอกจากงานเว็บไซต์แล้ว โปรเจกต์จบการศึกษาของผมคือการพัฒนา เกม 3D แนว Base Defense ด้วย Unity Game
+                    Engine ซึ่งผู้เล่นรับบทเป็นผู้พิทักษ์ที่ต้องปกป้อง “Energy Pillar” จากการรุกรานของศัตรู เกมนี้มีระบบ
+                    การต่อสู้, การป้องกัน, การจำกัดเวลา และการโต้ตอบกับสิ่งแวดล้อม ซึ่งช่วยเพิ่มทักษะการออกแบบระบบ,
+                    การใช้ C# ใน Unity และการแก้ไขปัญหาทางเทคนิคให้สมบูรณ์
+
+                    ผมยังสามารถใช้ภาษา Python, Java และ C++ ได้ พร้อมทั้งเป็นผู้ที่เรียนรู้สิ่งใหม่ ๆ ได้รวดเร็ว
+                    ปรับตัวได้ดี และทำงานภายใต้แรงกดดันได้อย่างมีประสิทธิภาพ
+
+                    ผมมีความตั้งใจที่จะสมัครงานในตำแหน่งที่เกี่ยวข้องกับ IT หรือ Web Development
+                    เพื่อพัฒนาทักษะและเติบโตไปพร้อมกับองค์กร สำหรับเงินเดือนที่คาดหวังอยู่ที่ 16,000 บาทขึ้นไป
+                    ทั้งนี้ยินดีพิจารณาตามโครงสร้างและข้อเสนอของบริษัทครับ</p>
+            </div>
+        </section>
+
+        <footer id="contact">
+            <div>
+                <strong>ติดต่อ</strong>
+                <div class="meta">• GitHub: https://github.com/Beckham0 <br>• Email: khunakonthamdi@gmail.com <br>• Tel:
+                    0983173534</div>
+            </div>
+            <div style="text-align:right">
+                <small class="meta">Khunakon thamdi</small>
+            </div>
+        </footer>
     </div>
-  </div>
 
+    <!-- modal -->
+    <div class="modal-backdrop" id="modal">
+        <div class="modal" role="dialog" aria-modal="true">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+                <strong id="modalTitle">Project title</strong>
+                <button class="close" id="modalClose">ปิด</button>
+            </div>
+            <div class="media" id="modalMedia"
+                style="margin-top:12px; background:#0a2230;display:flex;align-items:center;justify-content:center;color:var(--muted)">
+                ภาพตัวอย่าง</div>
+            <div class="content" id="modalDesc"></div>
+        </div>
+    </div>
 
+    <script>
+        // ตัวอย่างข้อมูลผลงาน — แก้ข้อความ รูป และลิงก์เป็นของจริง
+        const projects = [
+            { id: 1, title: 'บริษัท เอ็นอาร์พี มายแอคเคาท์ จำกัด', tag: 'web', desc: 'บริษัท เอ็นอาร์พี มายแอคเคาท์ จำกัด', img: 'บริษัท เอ็นอาร์พี มายแอคเคาท์ จำกัด.png', go: 'https://beckham0.github.io/' },
+            { id: 2, title: 'บริษัท บี พี แอคเคาท์ เซอร์วิส กรุ๊ป จำกัด', tag: 'web', desc: 'บริษัท บี พี แอคเคาท์ เซอร์วิส กรุ๊ป จำกัด', img: 'บริษัท บี พี แอคเคาท์ เซอร์วิส.png', go: 'https://bp-acc.netlify.app/?fbclid=IwY2xjawM55HlleHRuA2FlbQIxMQBicmlkETF5NHhpMkNiRzAyU2MybHJnAR5vGir0Fsg8-TBDZVw7PWY1_lg8QJKDxXo6avgxCw2w0k9h83G5RH2p-IP9Vw_aem_b8AZyVMzx5Unth-cW-5Mkw' },
+            { id: 3, title: 'บริษัท วัน สต๊อป แอคเคาท์ติ้ง จำกัด', tag: 'web', desc: 'บริษัท วัน สต๊อป แอคเคาท์ติ้ง จำกัด', img: 'บริษัท วัน สต๊อป แอคเคาท์ติ้ง จำกัด.png', go: 'https://one-stop-acc.netlify.app/' },
+            { id: 4, title: 'สำนักงานตัวแทนประกันชีวิต คุณรัสรินทร์', tag: 'web', desc: 'สำนักงานตัวแทนประกันชีวิต คุณรัสรินทร์', img: 'สำนักงานตัวแทนประกันชีวิต.png', go: 'https://meritbangnainsurance.com/' },
+            { id: 5, title: 'บริษัท พายัพโยธา จำกัด', tag: 'web', desc: 'บริษัท พายัพโยธา จำกัด', img: 'บริษัท พายัพโยธา จำกัด.png', go: 'https://payupyotha.netlify.app/' },
+            { id: 6, title: 'เกมป้องกันฐาน (Unity)', tag: 'game', desc: 'เกมแนว tower-defense ที่สร้างด้วย Unity, C#', img: 'Game1.png', go: 'game.mp4' },
+        ];
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const videos = document.querySelectorAll(".scroll-video");
+        const grid = document.getElementById('grid');
+        function render(list) {
+            grid.innerHTML = '';
+            for (const p of list) {
+                const el = document.createElement('div'); el.className = 'card'; el.tabIndex = 0;
+                el.innerHTML = `
+          <img src="${p.img}" alt="${p.title}">
+          <h3>${p.title}</h3>
+          <div class="meta">Tag: ${p.tag.toUpperCase()}</div>
+        `;
+                el.addEventListener('click', () => openModal(p));
+                el.addEventListener('keypress', (e) => { if (e.key === 'Enter') openModal(p) });
+                grid.appendChild(el);
+            }
+        }
 
-      videos.forEach(video => {
-        video.muted = true;       // ป้องกัน autoplay block
-        video.playsInline = true; // รองรับมือถือ
-        video.loop = true;        // ทำให้เล่นวน
-      });
+        function openModal(p) {
+            document.getElementById('modalTitle').textContent = p.title;
+            document.getElementById('modalDesc').innerHTML = `<p style="color:floralwhite">${p.desc}</p><p><a href='${p.go}' style='color:floralwhite'>เพิ่มเติม</a></p>`;
+            const media = document.getElementById('modalMedia');
+            media.innerHTML = `<img src="${p.img}" style="width:100%;height:100%;object-fit:cover;border-radius:8px">`;
+            document.getElementById('modal').style.display = 'flex';
+        }
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.play().catch(e => console.log("Cannot autoplay:", e));
-          } else {
-            entry.target.pause();
-          }
+        document.getElementById('modalClose').addEventListener('click', () => document.getElementById('modal').style.display = 'none');
+        document.getElementById('modal').addEventListener('click', (e) => { if (e.target.id === 'modal') document.getElementById('modal').style.display = 'none' });
+
+        // filters
+        document.querySelectorAll('.filter').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const f = btn.getAttribute('data-filter');
+                if (f === 'all') render(projects); else render(projects.filter(p => p.tag === f));
+            })
+        })
+
+        // initial render
+        render(projects);
+
+        // download resume (simple demo) — เปลี่ยนเป็นไฟล์จริงตามต้องการ
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+            const a = document.createElement('a');
+            a.href = 'Resume คุณากร ทำดี thai.pdf';     // ← ชี้ไปที่ไฟล์ PDF ของคุณ
+            a.download = 'Resume คุณากร ทำดี thai.pdf'; // ← ตั้งชื่อไฟล์เวลาบันทึก
+            a.click();
         });
-      }, { threshold: 0.5 });
 
-      videos.forEach(video => observer.observe(video));
-    });
-  </script>
-
-
-  <script>
-    const styli = document.createElement('style');
-    const position = 'right';
-    const tgElement = document.querySelector('.tg');
-    //const tqElement = document.querySelector('.tg-1');
-
-    styli.innerHTML = `
-    @keyframes my-animation {
-      0% { ${position}: -${tgElement.offsetWidth + 10}px; }
-      100% { ${position}: 100%; }
-    }
-    .tg {
-      animation: my-animation 18s linear infinite;
-    }
-
-    .tg-1 {
-      animation: my-animation 10s linear infinite;
-    }
-  `;
-
-    document.head.append(styli);
-  </script>
-
-  <script>
-    const track = document.querySelector('.slider-track');
-    const slides = document.querySelectorAll('.slide');
-    let index = 0;
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-    const slideCount = slides.length;
-
-    function updateSlide() {
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    nextBtn.onclick = () => {
-      index = (index + 1) % slideCount;
-      updateSlide();
-    };
-
-    prevBtn.onclick = () => {
-      index = (index - 1 + slideCount) % slideCount;
-      updateSlide();
-    };
-
-    // Auto slide
-    setInterval(() => {
-      index = (index + 1) % slideCount;
-      updateSlide();
-    }, 3000);
-
-    // Drag / Swipe
-    let startX = 0;
-    let isDown = false;
-
-    track.addEventListener('mousedown', e => {
-      isDown = true;
-      startX = e.clientX;
-    });
-    window.addEventListener('mouseup', e => {
-      if (!isDown) return;
-      let diff = e.clientX - startX;
-      if (diff > 50) prevBtn.click();
-      if (diff < -50) nextBtn.click();
-      isDown = false;
-    });
-
-    // Touch for mobile
-    track.addEventListener('touchstart', e => {
-      startX = e.touches[0].clientX;
-    });
-    track.addEventListener('touchend', e => {
-      let diff = e.changedTouches[0].clientX - startX;
-      if (diff > 50) prevBtn.click();
-      if (diff < -50) nextBtn.click();
-    });
-  </script>
-
+    </script>
 </body>
 
 </html>
