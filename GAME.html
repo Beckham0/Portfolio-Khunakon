@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="th">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Portfolio — KHUNAKON | GAME</title>
+    <link rel="stylesheet" href="style game.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="brand">
+                <div class="logo"><img src="KHUNAKON.jpg" alt=""></div>
+                <div>
+                    <h1>KHUNAKON THAMDI</h1>
+                    <p class="lead">Frontend Developer / IT / IT-suppot / Web apps</p>
+                </div>
+            </div>
+            <div class="tagline"></div>
+        </header>
+
+        <main>
+            <section class="card">
+                <div style="display:flex; gap:16px; align-items:flex-start;">
+                    <div style="flex:1">
+                        <h2>CPE Defense — Unity Game Engine</h2>
+                        <!-- <div class="muted">บทบาท: Game Developer / System Designer &nbsp;•&nbsp; เทคโนโลยี: Unity, C#, NavMesh, Blender (optional)</div> -->
+                    </div>
+                    <div class="meta">
+                        <div class="small"></div>
+                        <div class="chips">
+                            <div class="chip">โปรเจกต์จบ</div>
+                            <div class="chip">Base Defense</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="height:360px; margin-top:16px;" class="media">
+                    <!-- ใส่ไฟล์วิดีโอจริงของคุณที่นี่ (เช่น /assets/game-demo.mp4) -->
+                    <video id="demoVideo" poster="Game1.png" controls class="scroll-video" muted
+                        playsinline preload="metadata">
+                        <source src="game.mp4" type="video/mp4" controls class="scroll-video" muted playsinline
+                            preload="metadata">
+                    </video>
+                </div>
+
+                <div style="display:flex; align-items:center; justify-content:space-between; margin-top:12px">
+                    <div>
+                        <strong>คำอธิบายโดยย่อ</strong>
+                        <div class="muted">ผู้เล่นรับบทเป็นผู้พิทักษ์ที่ต้องปกป้อง <em>Energy Pillar</em>
+                            จากคลื่นศัตรูภายในเวลาที่กำหนด โดยใช้ทักษะการโจมตีและไอเท็มพิเศษ</div>
+                    </div>
+                    <div class="chips">
+                        <div class="chip">C#</div>
+                        <div class="chip">Unity</div>
+                        <div class="chip">AI / Pathfinding</div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:18px;">คุณสมบัติเด่นของโปรเจกต์</h3>
+                <ul class="feats">
+                    <li><strong>Combat System:</strong> พัฒนาด้วย C# ใช้พลังงานจาก Energy Pillar สร้าง Dimensional Rings
+                        เป็นอาวุธหลัก</li>
+                    <li><strong>AI Pathfinding:</strong> ศัตรูใช้ Unity NavMesh เพื่อค้นหาเส้นทางและโจมตีเป้าหมาย</li>
+                    <li><strong>Level Design:</strong> แมป 3 ชั้นจำลองจากอาคารจริงของคณะวิศวกรรมศาสตร์ NPU</li>
+                    <li><strong>Win/Lose Conditions:</strong> หาก Energy Pillar ถูกทำลาย -> Game Over</li>
+                    <li><strong>UI/UX:</strong> เมนูหลัก (Start / Exit) และการแสดงสถานะพลังงานอย่างชัดเจน</li>
+                </ul>
+
+                <h3 style="margin-top:10px">บทบาทของผม (Responsibilities)</h3>
+                <ul class="feats">
+                    <li>ออกแบบระบบเกมเพลย์ &amp; สถาปัตยกรรมเชิงตรรกะ</li>
+                    <li>เขียนโค้ดหลักด้วย C# (Combat, Enemy AI, Game State)</li>
+                    <li>ปรับแต่งระบบ NavMesh และแก้ปัญหา collision &amp; performance</li>
+                    <li>ทดสอบและปรับสมดุลเกม (Playtesting)</li>
+                </ul>
+
+                <h3 style="margin-top:10px">ผลลัพธ์ / สิ่งที่ได้</h3>
+                <ul class="feats">
+                    <li>โปรโตไทป์ที่เล่นได้ (Playable Prototype)</li>
+                    <li>ทักษะการแก้ปัญหาทางเทคนิคและการออกแบบระบบเชิงซ้อน</li>
+                    <li>ผลงานที่สามารถสาธิตใน Portfolio และการสัมภาษณ์งาน</li>
+                </ul>
+
+                <footer>
+                    <div> <a href="mailto:" style="color:var(--accent);"></a></div>
+                </footer>
+            </section>
+
+            <aside>
+                <div class="card card-aside">
+                    <h3 class="role">ทักษะที่เกี่ยวข้อง</h3>
+                    <div class="skill-list">
+                        <div class="skill">Unity / C#</div>
+                        <div class="skill">Game Design</div>
+                        <div class="skill">AI / NavMesh</div>
+                        <div class="skill">3D Modeling (Blender)</div>
+                        <div class="skill">HTML / CSS / JavaScript</div>
+                        <div class="skill">Version Control (Git)</div>
+                    </div>
+
+                    <div style="margin-top:12px">
+                        <strong>เครื่องมือ &amp; เทคนิค</strong>
+                        <div class="muted" style="margin-top:8px">Unity Editor, Visual Studio, Blender, Photoshop, Git
+                        </div>
+                    </div>
+
+                    <div class="cta">
+                        <a class="btn btn-primary" href="#"
+                            onclick="document.getElementById('demoVideo').play(); return false;">▶
+                            เล่นวิดีโอตัวอย่าง</a>
+
+                    </div>
+
+                    <!--<div style="margin-top:16px">
+            <strong>ติดต่อ</strong>
+            <div class="muted">Email: you@example.com<br>Phone: 0X-XXXX-XXXX</div>
+          </div>-->
+
+                </div>
+            </aside>
+        </main>
+
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="box">
+            <video controls id="modalVideo">
+                <source src="game.mp4" type="video/mp4" controls class="scroll-video" muted playsinline
+                    preload="metadata">
+            </video>
+        </div>
+    </div>
+
+    <script>
+        // small interactions: open modal for video if user clicks play (example)
+        const modal = document.getElementById('modal');
+        const modalVideo = document.getElementById('modalVideo');
+        document.getElementById('demoVideo').addEventListener('play', (e) => {
+            // pause the inline and open modal playback (optional). Comment out if undesired.
+            e.target.pause();
+            modal.classList.add('show');
+            modalVideo.currentTime = 0;
+            modalVideo.play();
+        });
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) { modalVideo.pause(); modal.classList.remove('show'); }
+        });
+    </script>
+</body>
+
+</html>
